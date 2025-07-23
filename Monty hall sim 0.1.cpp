@@ -13,6 +13,7 @@ int get_randint(int min, int max){
 
 int main()
 {   
+    int dummyvar;
     int opendoor;
     int guess;
     int wins = 0;
@@ -36,5 +37,6 @@ int main()
     cout << "Iterations: " << itternum << endl ;
     cout << "Wins: " << wins << endl;
     cout << "Losses: " << losses << endl;
-    cout << "Winrate: " << winrate;
+    cout << "Winrate: " << 100*winrate <<"%";
+    cin >> dummyvar ;
 }   
