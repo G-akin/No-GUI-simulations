@@ -25,7 +25,7 @@ int main(){
 
     int size = sizeof(doors) / sizeof(doors[0]);
     for (int i = 0; i < itternum ; i++) {
-        guess = randint(0,2);
+        // guess = randint(0,2);
         // cout << "Guess: " << guess << endl ;
         random_shuffle(&doors[0],&doors[3]);
 
@@ -42,8 +42,8 @@ int main(){
         //     cout << doors_otherside[j] ;
         // }
         // cout << endl;
-
-        opendoor=randint(0,2);
+        guess = randint(0,2);
+        opendoor = randint(0,2);
 
         if (doors[opendoor] == "m"){
             // opendoor = (opendoor-randint(1,2)) ;
@@ -57,18 +57,16 @@ int main(){
 
         }
 
-    if (opendoor!=0){
-        guess = opendoor-1;
-    }
-        
-    else {
-        guess= opendoor+1;
-    }
+        if (opendoor==guess && guess!=0){
+            guess = guess-1;
+        } else {
+            guess = guess + 1 ;
+        }
     
         // cout <<"Opendoor: " << opendoor << endl;
         
         // if (doors[opendoor] == "m" || opendoor<0 || opendoor>2){
-        //     cout <<"Invalid open door" << endl;
+        //     // cout <<"Invalid open door" << endl;
         // } 
 
         if (doors[guess] == "m"){ 
