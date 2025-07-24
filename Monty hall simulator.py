@@ -2,7 +2,7 @@ import random
 
 wins = 0
 doors = ["m","g","n"]
-it = int(input("How many iterations with swapping would you like to simulate the monty hall problem for?"))   
+it = int(input("How many iterations with swapping would you like to simulate the monty hall problem for?\n"))   
 
 for i in range (1,it+1):
     random.shuffle(doors)
@@ -30,6 +30,6 @@ for i in range (1,it+1):
 succesrate = wins/it
 print("Iterations: ",(it))
 print("Wins when swapping: ",wins)
-print("losses when not swapping :",(it-wins))
+print("wins when not swapping :",(it-wins))
 print("succesrate when swapping: ",succesrate*100,"%")
 print("succesrate when not swapping:",100-(succesrate*100),"%")
