@@ -67,12 +67,12 @@ int main(){
         // if (guess < 0){
         // //     guess = guess +3;
         // }
-        guess = 0;
+        guess = guess1 + 1;
+
         // cout << "GGESS!!!"<< guess<<endl;
         for (int i = 0; i < 2 ; i++){
-            if (guess==opendoor || guess == guess1){
-                guess = guess + 1 ;
-                
+            if (guess == opendoor || guess == guess1){
+                guess = guess + 1 ;               
                 if (guess > 2 ){
                     guess = guess -3;
                 }else if (guess < 0){
