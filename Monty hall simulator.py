@@ -1,8 +1,7 @@
 import random
-
 wins = 0
 doors = ["m","g","n"]
-it = int(input("How many iterations with swapping would you like to simulate the monty hall problem for?\n"))   
+it = int(input("How many iterations of the monty hall problem would you like to simulate?\n"))   
 
 for i in range (1,it+1):
     random.shuffle(doors)
