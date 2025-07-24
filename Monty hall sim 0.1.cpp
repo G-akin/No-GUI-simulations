@@ -24,10 +24,8 @@ int main(){
     cin >> itternum;
 
     int size = sizeof(doors) / sizeof(doors[0]);
-    for (int i = 0; i < itternum ; i++) {
-    
+    for (int i = 0; i < itternum ; i++) {    
         random_shuffle(&doors[0],&doors[3]);
-
         guess1 = randint(0,2);
         opendoor = randint(0,2);
 
