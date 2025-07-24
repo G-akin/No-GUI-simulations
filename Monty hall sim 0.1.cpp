@@ -46,17 +46,17 @@ int main(){
         guess1 = randint(0,2);
         opendoor = randint(0,2);
 
-       for (int i=0;i<2;i++){
-        if (doors[opendoor] == "m" || opendoor==guess1){
-            opendoor = opendoor + 1;
+        for (int i=0;i<2;i++){
+            if (doors[opendoor] == "m" || opendoor==guess1){
+                opendoor = opendoor + 1;
            }
-      
-        if (opendoor>2){
-            opendoor = opendoor - 3;
+     
+            if (opendoor>2){
+                opendoor = opendoor - 3;
 
-        } else if(opendoor<0){
-            opendoor = opendoor + 3;
-            }
+            }else if(opendoor<0){
+                    opendoor = opendoor + 3;
+                }
         }
         // cout << opendoor << endl ;
 
@@ -69,15 +69,15 @@ int main(){
         // if (guess < 0){
         // //     guess = guess +3;
         // }
-        guess = guess1 + 1;
+        guess = guess1;
 
         // cout << "GGESS!!!"<< guess<<endl;
         for (int i = 0; i < 2 ; i++){
             if (guess == opendoor || guess == guess1){
                 guess = guess + 1 ;               
-                if (guess > 2 ){
+            if (guess > 2 ){
                     guess = guess -3;
-                }else if (guess < 0){
+            }else if (guess < 0){
                     guess = guess +3;
                 }
             }
