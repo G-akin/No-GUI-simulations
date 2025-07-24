@@ -47,7 +47,7 @@ int main(){
         opendoor = randint(0,2);
 
        for (int i=0;i<2;i++){
-        if (doors[opendoor] == "m" || opendoor==guess){
+        if (doors[opendoor] == "m" || opendoor==guess1){
             opendoor = opendoor + 1;
            }
       
