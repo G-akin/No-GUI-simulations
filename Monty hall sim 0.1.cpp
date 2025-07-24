@@ -46,9 +46,11 @@ int main(){
         guess1 = randint(0,2);
         opendoor = randint(0,2);
 
-        if (doors[opendoor] == "m"){
-            opendoor = opendoor + (randint(0,1) * 2 -1);
-
+       for (int i=0;i<2;i++){
+        if (doors[opendoor] == "m" || opendoor==guess){
+            opendoor = opendoor + 1;
+           }
+      
         if (opendoor>2){
             opendoor = opendoor - 3;
 
