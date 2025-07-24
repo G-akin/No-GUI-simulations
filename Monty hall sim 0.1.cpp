@@ -20,7 +20,6 @@ int main(){
     int guess1;
 
     string doors[3] = {"m","g","n"};
-    string doors_otherside[3] = {"m","g","n"};
     cout <<"How many iterations with swapping would you like to simulate the monty hall problem for?"<<endl;
     cin >> itternum;
 
@@ -29,8 +28,6 @@ int main(){
     
         random_shuffle(&doors[0],&doors[3]);
 
-        copy(doors, doors + 3, doors_otherside);
-        
         guess1 = randint(0,2);
         opendoor = randint(0,2);
 
