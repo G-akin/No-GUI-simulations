@@ -61,8 +61,9 @@ int main(){
     float winrate = (float)wins/itternum;
     int losses = itternum-wins;
     cout << "Iterations: " << itternum << endl ;
-    cout << "Wins: " << wins << endl;
-    cout << "Losses: " << losses << endl;
-    cout << "Winrate: " << 100*winrate <<"%";
+    cout << "Wins when swapping:: " << wins << endl;
+    cout << "wins when not swapping: " << losses << endl;
+    cout << "Winrate when swapping: " << 100*winrate <<"%"<< endl;
+    cout << "Winrate when not swapping: " << 100-(100*winrate) <<"%";
     cin >> dummyvar ;
 }   
