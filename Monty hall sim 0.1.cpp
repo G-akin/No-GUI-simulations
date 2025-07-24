@@ -20,7 +20,7 @@ int main(){
     int guess1;
 
     string doors[3] = {"m","g","n"};
-    cout <<"How many iterations with swapping would you like to simulate the monty hall problem for?"<<endl;
+    cout <<"How many iterations of the monty hall problem would you like to simulate?"<<endl;
     cin >> itternum;
 
     int size = sizeof(doors) / sizeof(doors[0]);
@@ -32,24 +32,19 @@ int main(){
         for (int i=0;i<2;i++){
             if (doors[opendoor] == "m" || opendoor==guess1){
                 opendoor = opendoor + 1;
-           }
+            }
      
             if (opendoor>2){
                 opendoor = opendoor - 3;
-
-            }else if(opendoor<0){
-                    opendoor = opendoor + 3;
-                }
+            }   
         }
 
         guess = guess1;
         for (int i = 0; i < 2 ; i++){
             if (guess == opendoor || guess == guess1){
                 guess = guess + 1 ;               
-            if (guess > 2 ){
-                    guess = guess -3;
-            }else if (guess < 0){
-                    guess = guess +3;
+                if (guess > 2 ){
+                        guess = guess -3;
                 }
             }
         }   
@@ -58,6 +53,7 @@ int main(){
             wins++;
         }
     }
+    
     float winrate = (float)wins/itternum;
     int losses = itternum-wins;
     cout << "Iterations: " << itternum << endl ;
