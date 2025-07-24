@@ -17,6 +17,7 @@ int main(){
     int guess;
     int wins = 0;
     int itternum;
+    int guess1;
 
     string doors[3] = {"m","g","n"};
     string doors_otherside[3] = {"m","g","n"};
@@ -42,27 +43,50 @@ int main(){
         //     cout << doors_otherside[j] ;
         // }
         // cout << endl;
-        guess = randint(0,2);
+        guess1 = randint(0,2);
         opendoor = randint(0,2);
 
         if (doors[opendoor] == "m"){
-            // opendoor = (opendoor-randint(1,2)) ;
-            if (opendoor != 2){
-                opendoor = opendoor + 1;
-            }
-            else {
-                opendoor = opendoor - 1;
-            }
-            
+            opendoor = opendoor + (randint(0,1) * 2 -1);
 
-        }
+        if (opendoor>2){
+            opendoor = opendoor - 3;
 
-        if (opendoor==guess && guess!=0){
-            guess = guess-1;
-        } else {
-            guess = guess + 1 ;
+        } else if(opendoor<0){
+            opendoor = opendoor + 3;
+            }
         }
-    
+        // cout << opendoor << endl ;
+
+        // guess = guess + 1;
+
+        // // if (guess >2 ){
+        //     guess = guess -3;
+        // }
+        
+        // if (guess < 0){
+        // //     guess = guess +3;
+        // }
+        guess = 0;
+        // cout << "GGESS!!!"<< guess<<endl;
+        for (int i = 0; i < 2 ; i++){
+            if (guess==opendoor || guess == guess1){
+                guess = guess + 1 ;
+                
+                if (guess > 2 ){
+                    guess = guess -3;
+                }else if (guess < 0){
+                    guess = guess +3;
+                }
+            }
+        }   
+        cout <<"Guess: "<< guess << endl;
+        cout <<"Guess1: "<< guess1 << endl;
+        cout <<"Opendoor: "<< opendoor << endl;
+        cout << endl;
+        if (guess == guess1 || guess == opendoor) {
+            cout << "Invalid guess" << endl;
+        }
         // cout <<"Opendoor: " << opendoor << endl;
         
         // if (doors[opendoor] == "m" || opendoor<0 || opendoor>2){
