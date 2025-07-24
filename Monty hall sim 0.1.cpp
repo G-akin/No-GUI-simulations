@@ -20,38 +20,31 @@ int main(){
     int guess1;
 
     string doors[3] = {"m","g","n"};
-    cout <<"How many iterations with swapping would you like to simulate the monty hall problem for?"<<endl;
+    cout <<"How many iterations of the monty hall problem would you like to simulate?"<<endl;
     cin >> itternum;
 
     int size = sizeof(doors) / sizeof(doors[0]);
-    for (int i = 0; i < itternum ; i++) {
-    
+    for (int i = 0; i < itternum ; i++) {    
         random_shuffle(&doors[0],&doors[3]);
-
         guess1 = randint(0,2);
         opendoor = randint(0,2);
 
         for (int i=0;i<2;i++){
             if (doors[opendoor] == "m" || opendoor==guess1){
                 opendoor = opendoor + 1;
-           }
+            }
      
             if (opendoor>2){
                 opendoor = opendoor - 3;
-
-            }else if(opendoor<0){
-                    opendoor = opendoor + 3;
-                }
+            }   
         }
 
         guess = guess1;
         for (int i = 0; i < 2 ; i++){
             if (guess == opendoor || guess == guess1){
                 guess = guess + 1 ;               
-            if (guess > 2 ){
-                    guess = guess -3;
-            }else if (guess < 0){
-                    guess = guess +3;
+                if (guess > 2 ){
+                        guess = guess -3;
                 }
             }
         }   
@@ -60,11 +53,13 @@ int main(){
             wins++;
         }
     }
+    
     float winrate = (float)wins/itternum;
     int losses = itternum-wins;
     cout << "Iterations: " << itternum << endl ;
-    cout << "Wins: " << wins << endl;
-    cout << "Losses: " << losses << endl;
-    cout << "Winrate: " << 100*winrate <<"%";
+    cout << "Wins when swapping:: " << wins << endl;
+    cout << "wins when not swapping: " << losses << endl;
+    cout << "Winrate when swapping: " << 100*winrate <<"%"<< endl;
+    cout << "Winrate when not swapping: " << 100-(100*winrate) <<"%";
     cin >> dummyvar ;
 }   
