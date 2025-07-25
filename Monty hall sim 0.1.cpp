@@ -29,7 +29,7 @@ int main(){
         guess1 = randint(0,2);
         opendoor = randint(0,2);
 
-        for (int i=0;i<1;i++){
+        for (int i=0;i<2;i++){
             if (doors[opendoor] == "m" || opendoor==guess1){
                 opendoor = opendoor + 1;
             }
@@ -40,7 +40,7 @@ int main(){
         }
 
         guess = guess1;
-        for (int i = 0; i < 1 ; i++){
+        for (int i = 0; i < 2 ; i++){
             if (guess == opendoor || guess == guess1){
                 guess = guess + 1 ;               
                 if (guess > 2 ){
