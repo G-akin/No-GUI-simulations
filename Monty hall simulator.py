@@ -1,18 +1,10 @@
 import random
 import time
 
-
-def runtime(start_time):
-    global it
-    current_time = time.time()
-    dt = (current_time - start_time)
-    print("Time taken:",dt,"seconds")
-    print("Rate:",(dt/it)**-1,"Per second")
-
 wins = 0
 #it = 1000
 it=int(input("How many iterations with swapping would you like to simulate the monty hall problem for?"))
-global_start_time = time.time()    
+start_time = time.time()    
 for i in range (1,it+1):
     #print("iteration:",i)
     doors = ["m","g","n"]
@@ -30,11 +22,15 @@ for i in range (1,it+1):
     guess2 = nextglist[0]
     if guess2 == "m":
         wins = wins+1
+end_time = time.time()
+time_taken = end_time-start_time
     #succesrate = wins/i
     #print("succesrate:",succesrate)
 succesrate = wins/it
 print("Iterations:",(it))
-print("Wins",wins)
-print("losses:",(it-wins))
-print("succesrate:",succesrate*100,"%")
-runtime(global_start_time)
+print("Wins when swapping: ",wins)
+print("Wins when not swapping: ",(it-wins))
+print("Winrate when swapping: ",succesrate*100,"%")
+print("Winratee when not swapping: ",100-(succesrate*100),"%")
+print("Time taken: ", time_taken)
+print("Rate: ", it/time_taken)
