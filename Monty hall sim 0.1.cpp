@@ -1,7 +1,9 @@
 //Monty hall sim in C++
+#include <iostream>
+#include <iomanip>
 #include <random>
 #include <algorithm>
-#include <iostream>
+#include <chrono>
 using namespace std;
 
 int randint(int min, int max){
@@ -22,7 +24,7 @@ int main(){
     string doors[3] = {"m","g","n"};
     cout <<"How many iterations of the monty hall problem would you like to simulate?"<<endl;
     cin >> itternum;
-
+    auto start_time =chrono::high_resolution_clock::now();
     int size = sizeof(doors) / sizeof(doors[0]);
     for (int i = 0; i < itternum ; i++) {    
         random_shuffle(&doors[0],&doors[3]);
@@ -53,13 +55,20 @@ int main(){
             wins++;
         }
     }
-    
+    auto end_time =  chrono::high_resolution_clock::now();
+
+    float time_taken_ns = chrono::duration_cast<chrono::nanoseconds>(end_time - start_time).count();
+    float seconds_taken = time_taken_ns/1000000000;
+    float rate = itternum/seconds_taken;
     float winrate = (float)wins/itternum;
+
     int losses = itternum-wins;
     cout << "Iterations: " << itternum << endl ;
-    cout << "Wins when swapping:: " << wins << endl;
+    cout << "Wins when swapping: " << wins << endl;
     cout << "wins when not swapping: " << losses << endl;
     cout << "Winrate when swapping: " << 100*winrate <<"%"<< endl;
-    cout << "Winrate when not swapping: " << 100-(100*winrate) <<"%";
+    cout << "Winrate when not swapping: " << 100-(100*winrate) <<"%"<<endl;
+    cout << "Time taken: " << fixed << setprecision(9) << seconds_taken << " seconds" << endl;
+    cout <<"Rate: " << rate << " per second";
     cin >> dummyvar ;
-}   
+}       
